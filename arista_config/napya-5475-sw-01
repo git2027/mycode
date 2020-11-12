@@ -1,0 +1,27 @@
+! Command: show running-config
+! device: napya-5475-sw-01 (vEOS, EOS-4.22.0F)
+!
+! boot system flash:/vEOS-lab.swi
+!
+transceiver qsfp default-mode 4x10G
+!
+hostname napya-5475-sw-01
+!
+spanning-tree mode mstp
+!
+no aaa root
+!
+username admin role network-admin secret sha512 $6$LC8i4AvzEP.OMmoC$z.bGA5u8mqE0CUBYY57/B4p1EDko7fNgB7fZyr24MiJqZniJ2pN7rXv/K1Y4ABu9mITNIqRQFuAt1RbhS0hmt1
+!
+interface Management1
+   mtu 1450
+   ip address dhcp
+   dhcp client accept default-route
+!
+no ip routing
+!
+management api http-commands
+   protocol http
+   no shutdown
+!
+end
