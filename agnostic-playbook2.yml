@@ -24,11 +24,11 @@
 
           - name: take a peek as to what is inside of "results"
             debug:
-                    var: results
+                   var: results
 
-          - name: take a peek at "just" the JSON returned to the command "show version"
-            debug:
-                    var: results.results[0]
+                   # - name: take a peek at "just" the JSON returned to the command "show version"
+                   #debug:
+                   #var: results.results[0]
 
           - name: take a peek at "just" the JSON returned to the command "show interfaces"
             debug:
